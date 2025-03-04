@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SpecTackle"
+rootProject.name = "Kharidar"
 include(":app")
  
