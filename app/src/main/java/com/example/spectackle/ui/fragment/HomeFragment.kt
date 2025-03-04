@@ -35,22 +35,22 @@ class HomeFragment : Fragment() {
 
         // Initialize your lists
 
-        imageList.add(R.drawable.milkyclassic)
-        imageList.add(R.drawable.blackcateye)
-        imageList.add(R.drawable.specx_cateye_green)
+        imageList.add(R.drawable.asus)
+        imageList.add(R.drawable.surface)
+        imageList.add(R.drawable.macbook)
 
 
 
-        nameList.add("Milky Classic")
-        nameList.add("Black Cateye")
-        nameList.add("SpecX Cateye Green")
+        nameList.add("Asus zephyrus")
+        nameList.add("Surface pro")
+        nameList.add("Macbook pro")
 
 
 
 
-        priceList.add("Rs 1,500")
-        priceList.add("Rs 1,000")
-        priceList.add("Rs 1,900")
+        priceList.add("Rs 2,00,000")
+        priceList.add("Rs 2,50,000")
+        priceList.add("Rs 3,50,000")
 
 
 

@@ -6,7 +6,7 @@ plugins {
 }
     android {
         namespace = "com.example.spectackle"
-        compileSdk = 35
+        compileSdk = 34
 
         buildFeatures {
             viewBinding = true
@@ -53,7 +53,8 @@ plugins {
         androidTestImplementation(libs.androidx.junit)
         androidTestImplementation(libs.androidx.espresso.core)
         implementation ("androidx.activity:activity-ktx:1.10.0") // For by viewModels
-        implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7") // For ViewModel
+        implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+        
 
 
     }

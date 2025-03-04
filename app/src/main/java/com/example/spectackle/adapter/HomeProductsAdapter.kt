@@ -1,6 +1,7 @@
 package com.example.spectackle.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,18 +9,33 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spectackle.R
-
+import com.example.spectackle.ui.activity.ProductDetailActivity
 
 class HomeProductsAdapter(
-        val context: Context,
-        val imageList: ArrayList<Int>,
-        val nameList: ArrayList<String>,
-        val priceList: ArrayList<String>,
+    val context: Context,
+    val imageList: ArrayList<Int>,
+    val nameList: ArrayList<String>,
+    val priceList: ArrayList<String>
 ) : RecyclerView.Adapter<HomeProductsAdapter.HomeViewHolder>() {
-    class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+    inner class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var image: ImageView = itemView.findViewById(R.id.homeProductImage)
         var name: TextView = itemView.findViewById(R.id.homeProductName)
         var price: TextView = itemView.findViewById(R.id.homeProductPrice)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val intent = Intent(context, ProductDetailActivity::class.java).apply {
+                        putExtra("productImage", imageList[position])
+                        putExtra("productName", nameList[position])
+                        putExtra("productPrice", priceList[position])
+                    }
+                    context.startActivity(intent)
+                }
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
@@ -36,5 +52,4 @@ class HomeProductsAdapter(
         holder.name.text = nameList[position]
         holder.price.text = priceList[position]
     }
-
 }
